@@ -1,0 +1,57 @@
+
+import java.util.Scanner;
+public class saddle {
+
+	protected int o;
+	int [][]matrix;
+     protected int rs;
+     protected int cs;
+     boolean ma=false;
+    public saddle(int n) {
+    	matrix=new int[n][n];
+    	o=n;
+    	rs=1;
+    	cs=1;
+    }
+    public void check(){
+    	int crs=0;
+    	for(int i=0;i<o;i++){
+    	for(int j=0;j<o;j++){
+    	Scanner in=new Scanner(System.in);
+	    matrix[i][j]=in.nextInt();
+    	}}
+    	for(int i=0;i<o;i++){
+    		crs=i;
+    		int m=0;
+    		int y=0;
+    		for(int j=0;j<o;j++){
+    			 		if(matrix[i][j]<=m){
+    			m=matrix[i][j];
+    			cs=j;
+
+
+    		}
+    		}
+    		for(int d=0;d<o;d++){
+    		 			if(matrix[d][cs]>=y){
+    				y=matrix[d][cs];
+    				rs=d;
+    			}
+    		}
+    		if(crs==rs){
+    			rs=rs+1;
+    			cs=cs+1;
+    			System.out.println(rs+"   "+cs);
+    			ma=true;
+    		}
+    	}
+    }
+public void ans(){
+	if(ma)
+	System.out.println("found");
+	else
+	System.out.println("not found");
+
+}
+
+}
